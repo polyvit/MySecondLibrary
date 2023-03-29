@@ -3,6 +3,7 @@ export default class Customizator {
     this.btnBlock = document.createElement("div");
     this.colorPicker = document.createElement("input");
     this.btnBlock.addEventListener("click", (e) => this.onScaleChange(e));
+    this.colorPicker.addEventListener("input", (e) => this.onColorChange(e));
   }
 
   onScaleChange(e) {
@@ -38,6 +39,11 @@ export default class Customizator {
       }
       recourse(body);
     }
+  }
+
+  onColorChange(e) {
+    const body = document.querySelector("body");
+    body.style.backgroundColor = e.target.value;
   }
 
   render() {
